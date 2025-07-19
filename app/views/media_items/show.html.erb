@@ -12,8 +12,8 @@
 <br />
 <br />
 
-<p><strong>Created at:</strong> <span id="created_at" data-time="<%= @media_item.created_at.iso8601 %>"></span></p>
-<p><strong>Last updated:</strong> <span id="updated_at" data-time="<%= @media_item.updated_at.iso8601 %>"></span></p>
+<p><strong>Created at:</strong> <span class="created_at" data-time="<%= @media_item.created_at.iso8601 %>"></span></p>
+<p><strong>Last updated:</strong> <span class="updated_at" data-time="<%= @media_item.updated_at.iso8601 %>"></span></p>
 
 <br />
 
@@ -21,24 +21,23 @@
 <%= link_to "Back to List", media_items_path %>
 
 <script>
-  function formatLocalTime(id) {
-    const elem = document.getElementById(id);
-    if (!elem) return;
-    const timeString = elem.getAttribute("data-time");
-    const date = new Date(timeString);
+  function formatLocalTimes() {
+    document.querySelectorAll('.created_at, .updated_at').forEach(elem => {
+      const timeString = elem.getAttribute('data-time');
+      const date = new Date(timeString);
 
-    const formatted = date.toLocaleString(undefined, {
-      month: '2-digit',
-      day: '2-digit',
-      year: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: false
+      const formatted = date.toLocaleString(undefined, {
+        month: '2-digit',
+        day: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false
+      });
+
+      elem.textContent = formatted;
     });
-
-    elem.textContent = formatted;
   }
 
-  formatLocalTime("created_at");
-  formatLocalTime("updated_at");
+  document.addEventListener('DOMContentLoaded', formatLocalTimes);
 </script>
