@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
 
   def load_latest_commit
     commit_info = `git log -1 --pretty=format:"%h|%s|%cr"`
-    @commit_parts = commit_info.split('|')
+    @commit_parts = commit_info.split("|")
   end
 end

@@ -23,6 +23,15 @@
   <body>
     <div class="container">
       <%= yield %>
+
+      <footer>
+        <p>
+          View on <a target="_blank" href="https://github.com/eesazahed/ruby-movies">GitHub</a>
+          <% @commit_parts.each do |part| %>
+            <span>| <%= part %> </span>
+          <% end %>
+        </p>
+      </footer>
     </div>
   </body>
 </html>

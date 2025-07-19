@@ -1,7 +1,7 @@
 class MediaItemsController < ApplicationController
   def index
     @media_items = MediaItem.all
-  end  
+  end
 
   def new
     @media_item = MediaItem.new
@@ -37,7 +37,7 @@ class MediaItemsController < ApplicationController
     @media_item = MediaItem.find(params[:id])
     @media_item.destroy
     redirect_to root_path, notice: "Media item deleted."
-  end  
+  end
 
   private
 

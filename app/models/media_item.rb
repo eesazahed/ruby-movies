@@ -5,5 +5,4 @@ class MediaItem < ApplicationRecord
     validates :description, presence: true
     validates :rating, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 10 }
     validates :watchlist, presence: true, inclusion: { in: %w[watched watching watchlist] }
-  end
-  
+end

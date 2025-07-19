@@ -11,5 +11,4 @@ module MediaItemsHelper
         ""
       end
     end
-  end
-  
+end
