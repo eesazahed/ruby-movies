@@ -1,4 +1,4 @@
-# Ruby Movies
+# [Ruby Movies](https://ruby-movies.eesa.hackclub.app/)
 
 Ruby on Rails CRUD app
 
