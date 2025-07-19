@@ -20,4 +20,5 @@ git pull
 bundle config set --local path 'vendor/bundle'
 bundle install
 bin/rails db:migrate
+bin/rails assets:precompile
 bin/rails server -p "$PORT"
