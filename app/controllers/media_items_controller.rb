@@ -1,6 +1,6 @@
 class MediaItemsController < ApplicationController
   def index
-    @media_items = MediaItem.all
+    @media_items = MediaItem.order(id: :desc)
   end
 
   def new
