@@ -1,0 +1,41 @@
+<h1>Ruby Movies</h1>
+
+<p>Have you ever wanted a simple web app to keep track of a bunch of movies/series?</p>
+<p>Ruby Movies will be perfect for you!</p>
+
+<br />
+
+<%= link_to "Add New", new_media_item_path %>
+
+<div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Release Year</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Rating</th>
+        <th>Watchlist Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @media_items.each do |item| %>
+        <tr>
+          <td><%= item.category.capitalize %></td>
+          <td><%= item.release_year %></td>
+          <td><%= item.title %></td>
+          <td>
+            <%= link_to "Details", media_item_path(item) %>
+          </td>
+          <td><%= item.rating %></td>
+          <td class="<%= watchlist_class(item.watchlist) %>"><%= item.watchlist.capitalize %></td>
+          <td>
+            <%= link_to "Edit", edit_media_item_path(item) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+  background: url(https://hc-cdn.hel1.your-objectstorage.com/s/v3/19957eb73882dd176face437246ad4f2b63bf694_cinema.png);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background: white;
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+a {
+  color: #1a73e8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+table {
+  width: 100%;
+  min-width: 800px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+thead {
+  background-color: #ccc;
+}
+
+th,
+td {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.watchlist-watched {
+  color: green;
+}
+
+.watchlist-watching {
+  color: #7d7d0c;
+}
+
+.watchlist-watchlist {
+  color: grey;
+}
+
+th {
+  font-weight: 600;
+}
+
+tbody tr {
+  transition: 0.25s;
+}
+
+tbody tr:hover {
+  background-color: #dedede;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+label {
+  font-weight: 500;
+  margin-bottom: 0rem;
+  color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #fafafa;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #1a73e8;
+  background-color: #fff;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+input[type="submit"] {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+  align-self: flex-start;
+  transition: background-color 0.2s;
+}
+
+input[type="submit"]:hover {
+  background-color: #155ab6;
+}
+
+form + form {
+  margin-top: 2rem;
+}
+
+form + form input[type="submit"] {
+  background-color: #e53e3e;
+}
+
+form + form input[type="submit"]:hover {
+  background-color: #c53030;
+}
+
+ul {
+  padding-left: 1.5rem;
+  color: #c53030;
+  margin-top: 0.5rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+  color: #c53030;
+}

@@ -1,0 +1,72 @@
+<h1>Edit Media Item</h1>
+
+<%= link_to "Go back", media_items_path %>
+<br />
+
+<%= form_with model: @media_item, local: true, data: { turbo: false } do |form| %>
+  <% if @media_item.errors.any? %>
+    <div>
+      <h2><%= pluralize(@media_item.errors.count, "error") %> prohibited this media item from saving:</h2>
+      <ul>
+        <% @media_item.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :category %>
+    <div>
+      <% [['Movie', 'movie'], ['Series', 'series']].each do |label, value| %>
+        <label>
+          <%= form.radio_button :category, value %>
+          <%= label %>
+        </label>
+      <% end %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.label :release_year %>
+    <%= form.number_field :release_year %>
+  </div>
+
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :rating %>
+    <%= form.number_field :rating, in: 1..10 %>
+  </div>
+
+  <div>
+    <%= form.label :watchlist %>
+    <div>
+      <% [['Watched', 'watched'], ['Watching', 'watching'], ['Watchlist', 'watchlist']].each do |label, value| %>
+        <label>
+          <%= form.radio_button :watchlist, value %>
+          <%= label %>
+        </label>
+      <% end %>
+    </div>
+  </div>
+
+
+  <div>
+    <%= form.submit "Update Media Item" %>
+  </div>
+<% end %>
+
+<form action="<%= media_item_path(@media_item) %>" method="post" onsubmit='return confirm(`Are you sure you would like to delete "<%= j @media_item.title %>"?`);'>
+  <input type="hidden" name="_method" value="delete" />
+  <input type="hidden" name="<%= request_forgery_protection_token %>" value="<%= form_authenticity_token %>" />
+  <input type="submit" value="Delete" />
+</form>
