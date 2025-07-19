@@ -10,6 +10,10 @@ if ! [[ "$PORT" =~ ^[0-9]+$ ]]; then
   exit 1
 fi
 
+if [ -z "$SECRET_KEY_BASE" ]; then
+  echo "SECRET_KEY_BASE not set, generating one."
+  export SECRET_KEY_BASE=$(bin/rails secret)
+fi
 
 kill -9 $(lsof -ti ":$PORT") 2>/dev/null
 git pull
