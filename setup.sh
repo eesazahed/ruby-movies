@@ -10,7 +10,7 @@ if ! [[ "$PORT" =~ ^[0-9]+$ ]]; then
   exit 1
 fi
 
-export RAILS_ENV="production bin/rails assets:precompile"
+export RAILS_ENV=production
 
 if [ -z "$SECRET_KEY_BASE" ]; then
   echo "SECRET_KEY_BASE not set, generating one."
