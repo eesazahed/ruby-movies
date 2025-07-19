@@ -1,7 +1,6 @@
-<h1><%= @media_item.title %></h1>
+<h1><%= @media_item.title %> (<%= @media_item.release_year %>)</h1>
 
 <p><strong>Category:</strong> <%= @media_item.category.capitalize %></p>
-<p><strong>Release Year:</strong> <%= @media_item.release_year %></p>
 <p><strong>Rating:</strong> <%= @media_item.rating %> / 10</p>
 <p><strong>Status:</strong> <%= @media_item.watchlist.capitalize %></p>
 
