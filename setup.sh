@@ -13,6 +13,7 @@ fi
 
 kill -9 $(lsof -ti ":$PORT") 2>/dev/null
 git pull
+bundle config set --local path 'vendor/bundle'
 bundle install
 bin/rails db:migrate
 bin/rails server -p "$PORT"
