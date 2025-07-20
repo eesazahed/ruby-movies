@@ -16,9 +16,10 @@
 <p><strong>Last updated:</strong> <span class="updated_at" data-time="<%= @media_item.updated_at.iso8601 %>"></span></p>
 
 <br />
+<br />
 
-<%= link_to "Edit", edit_media_item_path(@media_item) %> |
-<%= link_to "Back to List", media_items_path %>
+<%= link_to "Edit", edit_media_item_path(@media_item), class: "btn-blue" %>
+<%= link_to "Back to List", media_items_path,  class: "btn-blue btn-gray"  %>
 
 <script>
   function formatLocalTimes() {

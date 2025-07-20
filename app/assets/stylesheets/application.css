@@ -7,7 +7,7 @@ body {
   background-attachment: fixed;
   background-position: center;
   margin: 0;
-  padding: 0;
+  padding: 2rem;
 }
 
 .container {
@@ -38,18 +38,18 @@ a {
   font-weight: 500;
 }
 
-a:hover {
+a:not(.btn-blue):hover {
   text-decoration: underline;
 }
 
 .table-wrapper {
   overflow-x: auto;
   width: 100%;
-  margin-top: 1.5rem;
+  margin-top: 3rem;
 }
 
 table {
-  width: max-content; /* allow table to exceed container width */
+  width: max-content;
   min-width: 800px;
   border-collapse: collapse;
   background: white;
@@ -68,7 +68,7 @@ td {
   color: #333;
   border-bottom: 1px solid #e0e0e0;
   text-align: center;
-  white-space: nowrap; /* prevent multiline content */
+  white-space: nowrap;
 }
 
 .watchlist-watched {
@@ -116,8 +116,7 @@ label {
 
 input[type="text"],
 input[type="number"],
-textarea,
-select {
+textarea {
   padding: 0.6rem 0.8rem;
   border: 1px solid #ccc;
   border-radius: 0.5rem;
@@ -129,8 +128,7 @@ select {
 
 input[type="text"]:focus,
 input[type="number"]:focus,
-textarea:focus,
-select:focus {
+textarea:focus {
   outline: none;
   border-color: #1a73e8;
   background-color: #fff;
@@ -141,6 +139,7 @@ textarea {
   min-height: 100px;
 }
 
+.btn-blue,
 input[type="submit"] {
   background-color: #1a73e8;
   color: white;
@@ -152,14 +151,24 @@ input[type="submit"] {
   font-weight: 500;
   align-self: flex-start;
   transition: background-color 0.2s;
+  margin-right: 0.75rem;
 }
 
+.btn-blue:hover,
 input[type="submit"]:hover {
   background-color: #155ab6;
 }
 
+.btn-gray {
+  background-color: #777777;
+}
+
+.btn-gray:hover {
+  background-color: #666;
+}
+
 form + form {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 form + form input[type="submit"] {
