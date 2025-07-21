@@ -17,10 +17,15 @@ if [ -z "$SECRET_KEY_BASE" ]; then
   export SECRET_KEY_BASE=$(bin/rails secret)
 fi
 
-kill -9 $(lsof -ti ":$PORT") 2>/dev/null
+PIDS=$(timeout 2s lsof -ti ":$PORT")
+if [ -n "$PIDS" ]; then
+  kill -9 $PIDS
+fi
+
 git pull
 bundle config set --local path 'vendor/bundle'
 bundle install
 bin/rails db:migrate
 bin/rails assets:precompile
 bin/rails server -p "$PORT"
+
