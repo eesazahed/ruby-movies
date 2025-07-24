@@ -12,10 +12,16 @@ fi
 
 export RAILS_ENV=production
 
-if [ -z "$SECRET_KEY_BASE" ]; then
+SECRET_FILE=".secret_key_base"
+
+if [ -f "$SECRET_FILE" ]; then
+  export SECRET_KEY_BASE=$(cat "$SECRET_FILE")
+else
   echo "SECRET_KEY_BASE not set, generating one."
   export SECRET_KEY_BASE=$(bin/rails secret)
+  echo "$SECRET_KEY_BASE" > "$SECRET_FILE"
 fi
+
 
 PIDS=$(timeout 2s lsof -ti ":$PORT")
 if [ -n "$PIDS" ]; then
